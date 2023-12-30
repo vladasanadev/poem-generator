@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <link rel="stylesheet" href="src/styles.css" />
   <title>AI Poem Generator</title>
 </head>
@@ -17,22 +18,15 @@
     </header>
 
     <main>
-      <form class="form">
+      <form class="form" id="poem-generator-form">
         <div class="input-container">
           <input type="text" placeholder="Enter the topic of the poem" autofocus required autocomplete="off"
             class="instructions" />
         </div>
         <input type="submit" class="submit-button" />
       </form>
-      <div class="poem">
-        Those with faith in the system say ‘don’t quit,
-
-        bide your time, if you’re worth it, you’ll make it.’
+      <div class="poem" id ="poem" >
         
-        But I was robbed, I was badly tendered.
-        
-        I could have scored. I could have contended.
-      </div>
     </main>
 
     <footer> This project was coded by Zuri Findley and is
