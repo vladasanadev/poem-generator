@@ -1,16 +1,22 @@
-function generatePoem(event) {
-  event.preventDefault();
-
-  new Typewriter('#typewriter', {
-    strings: ["Shy of the gatepost we reach for the stars"],
+function displayPoem(response) {
+  new Typewriter('#poem', {
+    strings: response.data.answer,
     autoStart: true,
     delay: 1,
-    cursor:"",
+    cursor: "",
   });
-
-  
 }
 
+function generatePoem(event) {
+  event.preventDefault();
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "b50343183o490adctc2bad01bf0a4ae0";
+  let prompt = `User Instructions are to generate a poem about ${instructionsInput.value}`;
+  let context = "You are an inspirational poem expert and love to write short poems. Your task is to generate short 4 line poems in basic HTML and seperate each line with a </br>. Make sure to follow the user instructions.";
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  axios.get(apiURL).then(displayPoem);
+}
 
 let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener('submit',generatePoem);
+poemFormElement.addEventListener('submit', generatePoem);
