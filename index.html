@@ -17,17 +17,20 @@
         AI Poem Generator
       </h1>
     </header>
-
     <main>
-      <form class="form" id="poem-generator-form">
-        <div class="input-container">
-          <input type="text" placeholder="Enter the topic of the poem" autofocus required autocomplete="off"
-            class="instructions" id="user-instructions"/>
-        </div>
-        <input type="submit" class="submit-button" />
-      </form>
-      <div class="poem" id ="poem" >
-        
+      <div class="form-wrapper">
+        <form class="form" id="poem-generator-form">
+          <div class="input-container">
+            <input type="text" placeholder="Enter the topic of the poem" autofocus required autocomplete="off"
+              class="instructions" id="user-instructions" />
+          </div>
+          <input type="submit" class="submit-button" />
+        </form>
+        <div class="hint">ie: London, flowers, chocolate</div>
+      </div>
+      <div class="poem hidden" id="poem">
+
+      </div>
     </main>
 
     <footer> This project was coded by Zuri Findley and is

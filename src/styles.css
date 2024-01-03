@@ -21,6 +21,19 @@ h1 {
   margin: 0;
 }
 
+.form-wrapper {
+  margin-bottom: 30px;
+}
+
+.hint {
+  line-height: 1.5;
+  font-size: 12px;
+  margin-top: 5px;
+  opacity: 0.6;
+}
+
+
+
 
 
 header {
@@ -30,7 +43,7 @@ header {
 .form {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+ 
 }
 
 .input-container {
@@ -71,9 +84,29 @@ header {
 
 }
 
+.hidden {
+ display: none;
+
+}
+
 footer {
   text-align: center;
   font-size: 13px;
   margin-top: 30px;
 
+}
+
+.generating {
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
