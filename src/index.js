@@ -1,9 +1,10 @@
 function displayPoem(response) {
   new Typewriter('#poem', {
-    strings: [response.data.answer], // Wrap the string in an array
+    strings: response.data.answer,
     autoStart: true,
     delay: 1,
     cursor: "",
+    
   });
 }
 
@@ -17,7 +18,7 @@ function generatePoem(event) {
 
   let poemElement = document.querySelector("#poem");
   poemElement.classList.remove("hidden");
-  poemElement.innerHTML = `<div class="generating"> 🕙 Generating a poem about ${instructionsInput.value} </div>`;
+  poemElement.innerHTML = `<div class="generating"> 🕙Generating a poem about ${instructionsInput.value} </div>`;
 
   axios.get(apiURL).then(displayPoem);
 }
