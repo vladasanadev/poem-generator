@@ -6,6 +6,18 @@ html {
   height: 100%;
 }
 
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* .formPosition {
+  opacity: 0;
+  transform: translateY(50px);
+  visibility: hidden;
+} */
+
 svg {
   display: block;
   width: 100%;
