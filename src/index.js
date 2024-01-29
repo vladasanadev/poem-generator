@@ -20,6 +20,22 @@ gsap.to("#text", {
   text: { value: newTextContent, delimiter: " " },
 });
 
+let formAnimation = gsap.timeline();
+ScrollTrigger.create({
+  animation: formAnimation,
+  trigger: ".scrollElement",
+  start: "top top",
+  end: "300% 200%", // Adjust these values as needed
+  scrub: 1,
+});
+
+// Animate form from top to bottom
+formAnimation.fromTo(".formPosition", 
+  { y: '0', opacity: 1 }, // Start above the screen
+  { y: '7000px', opacity: 1, ease: "power2.out" },
+  0 // Start time of the animation within the timeline
+);
+
 // hills animation
 scene1.to(
   "#h1-1",
@@ -91,11 +107,11 @@ scene2.fromTo("#h2-4", { y: 700 }, { y: 0 }, 0.2);
 scene2.fromTo("#h2-5", { y: 800 }, { y: 0 }, 0.3);
 scene2.fromTo("#h2-6", { y: 900 }, { y: 0 }, 0.3);
 
-scene2.fromTo(".formPosition", 
-  { opacity: 0, y: 50, visibility: "hidden" },
-  { opacity: 1, y: 0, visibility: "visible", ease: "power2.out" },
-  0 // Adjust this timing as needed
-);
+// scene2.fromTo(".formPosition", 
+//   { opacity: 0, y: 50, visibility: "hidden" },
+//   { opacity: 1, y: 0, visibility: "visible", ease: "power2.out" },
+//   0 // Adjust this timing as needed
+// );
 
 /* Bats */
 gsap.fromTo(
